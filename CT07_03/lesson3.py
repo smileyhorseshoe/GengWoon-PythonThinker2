@@ -71,8 +71,31 @@ import random
 # 7. If the student has no more lives, exit and print
 #     "GO AND SEE MS TAN FOR REMEDIAL"
 lives = 3
-for i in range(1,15):
-    a = random.randint(1, 100)
-    b = random.randint(1, 100)
+anscorrect = 0
+for i in range(1,16):
+    a = random.randint(1, 10)
+    b = random.randint(1, 10)
     ans = a * b
-    user = input(str(a) + "x" str(b) + "?")
+    user = input(str(a) + "x" + str(b) + "?\n")
+    if int(user) == ans:
+        print("Correct!")
+        anscorrect +=1
+        print("You have scored: " + str(anscorrect) + " so far.(Out of 15)")
+    if int(user) != ans:   
+        lives -= 1
+        print("WRONG!")
+        print("You have " + str(lives) + " lives left.")
+        while user != ans:
+            user = input(str(a) + "x" + str(b) + "?\n")
+            lives -= 1
+            print("WRONG!")
+            print("You have " + str(lives) + " lives left.")
+            if lives <= 0:
+                break
+
+    if lives <= 0:
+        print("GO AND SEE MS TAN FOR REMEDIAL")
+        break
+if anscorrect == 15:
+    print("You have passed the quiz. Congratulations! 67.77777777% of your friends failed!")
+        
