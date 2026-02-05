@@ -118,9 +118,8 @@ while True:
 print("We sell:" + str(menu))
 order = input("What would you like to eat? One Item Only.\n")
 
-if order == menu[i]:
+if order in menu:
     print("Yes, we sell that here.")
 else:
     print("Sorry, please go next door, bye.")
     
-
