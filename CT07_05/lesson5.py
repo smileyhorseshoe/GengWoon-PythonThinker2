@@ -80,8 +80,15 @@ powers = [
     50, 125, 65, 110, 83
 ]
 player1 = random.choice(pokemons)  
-print("Player 1 says: " , player1 ," I choose you!")
+
 player2 = random.choice(pokemons)
-print("Player 2 says: " , player2 ," I choose you!")
-
-
+while player2 == player1:
+    player2 = random.choice(pokemons)
+print(f"Player 1 says: {player1} , I choose you!")
+print(f"Player 2 says: {player2} I choose you!")
+player1_index = pokemons.index(player1)
+player2_index = pokemons.index(player2)
+if powers[player1_index] > powers[player2_index]:
+    print(f"{player1}(Power: {powers[player1_index]}) has defeated {player2}(Power: {powers[player2_index]}) and won!")
+else:
+    print(f"{player2}(Power: {powers[player2_index]}) has defeated {player1}(Power: {powers[player1_index]}) and won!")
