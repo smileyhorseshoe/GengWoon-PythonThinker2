@@ -40,7 +40,6 @@ while True:
 # # 3. Item3
 # # ============================================================
 print("You have ordered the following:")
-index = 0
 for item in order:
     index +=1
     print(f"{index}. {item}") 
