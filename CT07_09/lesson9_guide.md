@@ -1,197 +1,99 @@
-# Lesson 9 - Recap turtle + Turtle Race
+# Lesson 9 - Introduction to Functions
 
 ## Recap 1: Input Processing
 Create a program that will ask the riddle:
-"What has to be broken before you can use it?"
+- “What has to be broken before you can use it?”
 
-The user's input is then processed to ensure that the user's
-answer to the riddle is evaluated correctly regardless of
-capitalisation or additional non-relevant words.
+The user’s input is then processed to ensure that the user’s answer to the riddle is evaluated correctly regardless of capitalisation or additional non-relevant words.
 
-All of the following responses must be evaluated as a correct
-answer:
+You may use the following steps as a guide:
+1. Ask the user for a riddle and store their response in ‘userInput’ variable
+2. Create an ‘isCorrect’ variable with the Boolean value ‘False’
+3. Using ‘.lower()’, convert all letters of the user’s response to become lowercase
+4. Use a ‘for’ loop to iterate through the list, using ‘if’ to check if any of the items in the list is “egg” If an item in the list is “egg”, change the variable ‘isCorrect’ to ‘True’
+5. If ‘isCorrect’ is ‘True’, print “Correct! Well done.”
+6. Else, print “That’s not correct. Try again!”
+
+All of the following responses must be evaluated as a correct answer:
 1. An egg
 2. EGG
 3. eGG
-4. egg obviously
+4. Egg obviously
 5. iT MuSt Be An EgG
 
-You may use the following steps as a guide:
-1. Ask user the riddle and store their response in 'userInput'
-   variable
-2. Create an 'isCorrect' variable with the boolean value 'False'
-3. Using .lower(), convert all letters of user's response to
-   become lowercase
-4. Using .split(), convert any sentence into a list
-5. Use a 'for' loop to iterate through the list, using 'if' to
-   check if any of the item in the list is "egg"
-        If an item in the list is "egg", change the variable
-        'isCorrect' to 'True'
-6. If 'isCorrect' is 'True', print "Correct! Well done."
-7. Else, print "That's not correct. Try again!"
+## Recap 2: Turtle drawing
 
----------------------------------------------------------------
+### Recap 2a
+Using the ‘turtle’ library, create a 200x200 window
+Import the ‘turtle’ library
+Using ‘.setup()’, create a window 200 in width and 200 in height
+Add a ‘.mainloop()’ function to keep the window open
 
-## Task 1: Turtle Race
-We are creating a turtle racing program. In this program, there
-will be 3 turtles at the starting line. The user will be given
-a choice on which one will win.
+### Recap 2b
+Modify your previous code to create a blue arrow as your turtle.
+Create a turtle called “artist” using ‘turtle.Turtle()’
+Using ‘.shape()’, change the turtle shape to “arrow”
+Using ‘.color()’, change the turtle color to “blue”
 
-Once the user has made their choice, the turtles will move in
-random distances and directions toward the finishing line until
-one of them crosses it.
+### Recap 2c
+Modify your previous code to draw the shape of a compass rose
+Use ‘.penup()’ and position turtle to (0, 0) using ‘.goto()’
+Point turtle towards North (“90”) using ‘.seth()’
+Use ‘.pendown()’ and draw “60” towards North
+Using ‘.right()’, turn turtle 90 degrees to the right
+Using a ‘for’ loop, draw a circle by moving 1 step each time before turning 1 degree to the right for 360 times.
 
-We will work on each section of the program one at a time until
-we have a complete program.
+### Recap 2d
+Modify your previous code to print the position of your turtle at the end of the drawing.
 
-**Task 1a**: Setting Up the Screen
-Lets start by creating a window that is "forestgreen" in colour,
-and 600 in width and height
+Using ‘pos()’, print onto the console your turtle’s last coordinates in the following format:“Current turtle position: , ”
 
-1. Import the 'turtle' module
-2. Assign 'turtle.Screen()' to a variable 'window' to create a
-   window for your turtle graphics.
-3. Use '.setup(width=???, height=???)' on 'window' where '???'
-   is the desired width and height of the window
-4. Set the background colour of the window to "forestgreen"
-   using '.bgcolor()'
+## Task 1: Square
+Using the ‘turtle’ library, create a function that draws a square.
 
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
+Use the function you have created to draw the pattern shown below:
 
-You should see this when you run the program! (Refer to slides)
+☐☐☐☐☐☐
+  ☐☐☐☐
+   ☐☐
 
-**Task 1b**: Drawing the finish line
-Adding on to your previous answer, create a line of black
-squares at y = 250 by creating a black square turtle object
-and stamping it from x = -300 to x = 300 at 25 pixel-
-intervals
+1. Import the ‘turtle’ library
+2. Set up the screen using ‘turtle.Screen()’
+3. Create a function, “draw_square” that will draw a 20x20 square
+4. Using ‘for’ loops and the “draw_square” function you have created, draw the pattern shown on the screen.
+5. You will have to reposition your turtle before calling the “draw_square” function each time.
 
-1. Create a turtle object named 'pen'
-2. Lift the pen up
-3. Using '.shape()', set the turtle object's shape to "square"
-4. Using '.sety()', set turtle object's y position to 250
-5. Using a 'for i in range()' loop, use the 'i' variable to
-   create a stamp of 'pen' turtle object from x = -300 to
-   x = 300 at 25-pixel intervals:
-        a. Set 'pen' turtle's x coordinate using '.setx()'
-        b. Stamp a copy of 'pen' turtle at its current
-           position using '.stamp()'
+## Task 2: Square in a Square
+Use a function with parameters to draw 7 squares inside each other, getting smaller and smaller.
 
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
+1. Import the ‘turtle’ library
+2. Create a 400x400 screen
+3. Create a function “draw_square” with a “size” parameter
+4. The “draw_square” function will draw a square of size*size around the (0,0) coordinate.
+5. Within a ‘for’ loop, use the “draw_square” function you have created to draw 7 squares around the (0,0) coordinate with the following sizes:50, 100, 150, 200, 250, 300, 350
 
-You should see this when you run the program! (Refer to slides)
+## Task 3: Shape Creator
+You want to create a shape creator program that will draw any shape you want simply by giving the program the length and number of sides that the shape must have.
 
-**Task 1c**: Drawing the start line
-Adding on to your previous answer, use the 'pen' turtle object
-you have created earlier to draw a horizontal yellow start
-line at y = -250.
+To do this, you need to create a function with 2 parameters:
+- ‘length’
+- ‘num_sides’
 
-1. Using '.goto()', set 'pen' turtle's coordinates to
-   (-300, -250)
-2. Using the following commands, set the colour of 'pen' to
-   "yellow", set heading to 0 and move forward by 600
-   before hiding the turtle:
-        a. '.pencolor()'
-        b. '.pendown()'
-        c. '.seth()'
-        d. '.forward()'
-        e. '.hideturtle()'
+1. Create a function called draw_shape() that takes in the length of the sides, as well as the number of sides.
+2. The function should draw a shape with the length of sides and number of sides given by calculating the exterior angle
+3. Using the  draw_shape() function, draw the following:
+- Pentagon, Hexagon, Octagon and Decagon
 
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
+## Task 4: Drawing a House
+You have been tasked to draw a house (made of a square and a triangle)
 
-You should see this when you run the program! (Refer to slides)
+Using the ‘draw_shape’ function you have just created, create a house by first drawing a square, then a triangle above the square.
+1. The house is made up of a 100x100 square and a triangle that is 100 units long each side.
+2. The triangle must be connected to the square
 
-**Task 1d**: Create Sally the turtle
-Adding on to your previous answer, create a red, turtle-shaped
-turtle object 'Sally' will be one of the turtle racers.
-Position Sally at the starting position of (0, -250) and put
-"Sally" above the 'Sally' turtle object.
-
-1. Using 'turtle.Turtle()', create a 'Sally' turtle object
-2. Lift the pen using '.penup()'
-3. Using '.seth()', set 'Sally' turtle's heading to 90
-4. Using '.shape()', set 'Sally' turtle's shape to "turtle"
-5. Using '.color()', set 'Sally' turtle to "red"
-6. Using '.goto()', move 'Sally' turtle to (0, -250)
-7. Using '.write("Sally", align="center", font=('Arial', 20))',
-   put "Sally" above Sally the turtle
-
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
-
-You should see this when you run the program! (Refer to slides)
-
-**Task 1e**: Configure Bob and Keith turtles
-Adding on to your previous answer, repeat what you have done
-to set up Sally the turtle to also create the following
-turtles and position them at the specified coordinates:
-1. Bob:
-    Colour: "blue"
-    Starting position: (-200, -250)
-2. Keith:
-    Colour: "white"
-    Starting position: (200, -250)
-
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
-
-You should see this when you run the program! (Refer to slides)
-
-**Task 1f**: Input to guess the race winner
-Adding on to your previous answer, ask the user to guess the
-winner and store the user's response in the 'guess' variable
-
-1. Using 'input()', ask the user to "Guess the winner! " in
-   the console.
-2. Store the user's response in the variable 'guess'
-
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
-
-You should see this when you run the program! (Refer to slides)
-
-**Task 1g**: Racing loop
-Adding on to your previous answer, import the 'random' library
-and create a forever loop that will set each racing turtle's
-heading and number of steps forward randomly until one of them
-crosses y=250 where the finish line is.
-
-1. Initiate a variable 'winner' and assign it an empty string
-2. Set Bob, Sally, and Keith's pen down.
-3. In a forever loop:
-    a. Use '.seth()' and '.randint()' to set each racing
-       turtle's heading to between 75 and 115 randomly
-    b. Use '.forward()' and 'randint()' to move each racing
-       turtle forward by between 1 and 20 randomly
-    c. Using '.ycor()', create an 'if..elif..elif' statement
-       that checks if any of the racing turtle's y coordinate
-       is higher than y = 250.
-            i. If true, set the 'winner' variable to the
-               winning turtle's name and 'break' out of the
-               forever loop.
-
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
-
-You should see this when you run the program! (Refer to slides)
-
-**Task 1h**: Check if user's guess is correct
-Adding on to your previous answer, check if the user's guess is
-correct by comparing the 'winner' variable to 'guess'. Announce
-if the user got the right answer in the console.
-
-1. Using an 'if..else' statement, check if the user's guess is
-   the winner.
-    If the user was right,
-        print "Your guess was correct!"
-    Else,
-        print "The winner was <winner>" and "Better luck next
-        time!"
-
-Tip: Use '.mainloop()' at the end of your program to keep the
-window open
-
-Your turtle racing program is now complete!
+You may refer to the following as a guide:
+1. Import ‘turtle’ library
+2. Set up a window
+3. Create a turtle object and lift the pen to move without drawing
+4. Define ‘draw_shape’ function to draw a regular polygon based on specified length and number of sides
+5. Define ‘draw_house’ function that uses the ‘draw_shape’ function to combine a square and a triangle
