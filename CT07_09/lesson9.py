@@ -1,5 +1,163 @@
 # Lesson 9 - Introduction to Functions
 # print("Hello from lesson 9")
+# ## Task 1: Square
+# Using the ‘turtle’ library, create a function that draws a square.
+
+# Use the function you have created to draw the pattern shown below:
+
+# ☐☐☐☐☐☐
+#   ☐☐☐☐
+#    ☐☐
+#  Import Libary
+# import turtle 
+# # Global Var
+# screen = turtle.Screen() 
+# t = turtle.Turtle() 
+
+# # FUNCTIONS
+# def draw_square():
+#     # The code below is used to make a, one and only, ONLY A SINGULAR SQUARE
+#     t.seth(0) ## Set Init. Direction
+#     t.pendown() 
+#     for i in range(4):  ## Draw a square(square has 4 sides)
+#         t.forward(50) ## NOTE IT IS IN PIXELS
+#         t.right(90) ## Turns right(90 degrees)
+# # def rect(width,height):
+
+
+
+# # Main Code
+# t.penup() ## Puts pen up
+# t.goto(-200,200)
+# t.speed(0) ## Sets drawing speed
+# # t.seth(0) ## Set Init. Direction 
+# for i in range(6):
+#     t.pendown()
+#     draw_square()
+#     t.penup()
+#     t.forward(60)
+# t.penup()
+# t.goto(-140,140)
+# for i in range(4):
+#     t.pendown()
+#     draw_square()
+#     t.penup()
+#     t.forward(60)
+# t.penup()
+# t.goto(-80, 80)
+# for i in range(2):
+#     t.pendown()
+#     draw_square()
+#     t.penup()
+#     t.forward(60)
+# turtle.done() ## keeps the window open, you can also do turtle.mainLoop() also known as its DONE
+
+
+
+
+# ## Task 2: Square in a Square
+# Use a function with parameters to draw 7 squares inside each other, getting smaller and smaller.
+
+# 1. Import the ‘turtle’ library
+# 2. Create a 400x400 screen
+# 3. Create a function “draw_square” with a “size” parameter
+# 4. The “draw_square” function will draw a square of size*size around the (0,0) coordinate.
+# 5. Within a ‘for’ loop, use the “draw_square” function you have created to draw 7 squares around the (0,0) coordinate with the following sizes:50, 100, 150, 200, 250, 300, 350
+
+# #  Import Libary
+# import turtle 
+# # Global Var
+# length = input("What is the length of said shape?\n")
+# sides = input("How many sides does said shape have?\n")
+# screen = turtle.Screen() 
+# t = turtle.Turtle() 
+
+# # FUNCTIONS
+# def draw_square(size):
+#     # The code below is used to make a, one and only, ONLY A SINGULAR SQUARE
+#     t.seth(0) ## Set Init. Direction
+#     t.pendown() 
+#     for i in range(4):  ## Draw a square(square has 4 sides)
+#         t.forward(size) ## NOTE IT IS IN PIXELS
+#         t.right(90) ## Turns right(90 degrees)
+# # def rect(width,height):
+
+
+
+# # Main Code
+# t.penup() ## Puts pen up
+# t.goto(-25,25)
+# t.speed(0) ## Sets drawing speed
+# t.seth(0) ## Set Init. Direction 
+# t.pendown()
+# for i in range(50, 400,50):
+#     t.pu()
+#     t.goto(-i/2,i/2)
+#     draw_square(i)
+# turtle.done() ## keeps the window open, you can also do turtle.mainLoop() also known as its DONE
+# ## Task 3: Shape Creator
+# You want to create a shape creator program that will draw any shape you want simply by giving the program the length and number of sides that the shape must have.
+
+# To do this, you need to create a function with 2 parameters:
+# - ‘length’
+# - ‘num_sides’
+
+# 1. Create a function called draw_shape() that takes in the length of the sides, as well as the number of sides.
+# 2. The function should draw a shape with the length of sides and number of sides given by calculating the exterior angle
+# 3. Using the  draw_shape() function, draw the following:
+# - Pentagon, Hexagon, Octagon and Decagon
+
+# #  Import Libary
+# import turtle 
+# # Global Var
+# screen = turtle.Screen() 
+# t = turtle.Turtle() 
+
+# # FUNCTIONS
+# def draw_square(size):
+#     # The code below is used to make a, one and only, ONLY A SINGULAR SQUARE
+#     t.seth(0) ## Set Init. Direction
+#     t.pendown() 
+#     for i in range(4):  ## Draw a square(square has 4 sides)
+#         t.forward(size) ## NOTE IT IS IN PIXELS
+#         t.right(90) ## Turns right(90 degrees)
+
+# def DS(length,sides):
+#     # The code below is used to make a, one and only, ONLY A SINGULAR SHAPE
+#     t.seth(0) ## Set Init. Direction
+#     t.pendown() 
+#     for i in range(int(sides)):  ## Draw a square(square has 4 sides)
+#         t.forward(int(length)) ## NOTE IT IS IN PIXELS
+#         t.right(360 / int(sides)) ## Turns right(90 degrees)
+
+
+
+# # Main Code
+# length = int(screen.textinput("Length", "Enter length"))
+# sides = int(screen.textinput("Number of Sides", "Enter number of sides"))
+# t.penup() ## Puts pen up
+# t.speed(0) ## Sets drawing speed
+# t.goto(0,325)
+# t.seth(0) ## Set Init. Direction 
+# DS(length,sides)
+
+# turtle.done() ## keeps the window open, you can also do turtle.mainLoop() also known as its DONE
+
+# ## Task 4: Drawing a House
+# You have been tasked to draw a house (made of a square and a triangle)
+
+# Using the ‘draw_shape’ function you have just created, create a house by first drawing a square, then a triangle above the square.
+# 1. The house is made up of a 100x100 square and a triangle that is 100 units long each side.
+# 2. The triangle must be connected to the square
+
+# You may refer to the following as a guide:
+# 1. Import ‘turtle’ library
+# 2. Set up a window
+# 3. Create a turtle object and lift the pen to move without drawing
+# 4. Define ‘draw_shape’ function to draw a regular polygon based on specified length and number of sides
+# 5. Define ‘draw_house’ function that uses the ‘draw_shape’ function to combine a square and a triangle
+
+
 #  Import Libary
 import turtle 
 # Global Var
@@ -7,24 +165,53 @@ screen = turtle.Screen()
 t = turtle.Turtle() 
 
 # FUNCTIONS
-def draw_square():
+def draw_square(size):
     # The code below is used to make a, one and only, ONLY A SINGULAR SQUARE
     t.seth(0) ## Set Init. Direction
     t.pendown() 
     for i in range(4):  ## Draw a square(square has 4 sides)
-        t.forward(100) ## NOTE IT IS IN PIXELS
+        t.forward(size) ## NOTE IT IS IN PIXELS
         t.right(90) ## Turns right(90 degrees)
+
+def DS(length,sides):
+    # The code below is used to make a, one and only, ONLY A SINGULAR SHAPE
+    # t.seth(0) ## Set Init. Direction
+    t.pendown() 
+    for i in range(int(sides)):  ## Draw a square(square has 4 sides)
+        t.forward(int(length)) ## NOTE IT IS IN PIXELS
+        t.right(360 / int(sides)) ## Turns right(90 degrees)
+def DH():
+    DS(60,3)
+    t.forward(60)
+    t.left(90)
+    draw_square(60)
 
 
 
 # Main Code
-t.speed(0) ## Sets drawing speed
+
 t.penup() ## Puts pen up
-# t.seth(0) ## Set Init. Direction 
-draw_square()
-t.forward(100)
-draw_square()
+t.speed(0) ## Sets drawing speed
+t.seth(180) ## Set Init. Direction 
+DH()
 turtle.done() ## keeps the window open, you can also do turtle.mainLoop() also known as its DONE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -76,52 +263,9 @@ turtle.done() ## keeps the window open, you can also do turtle.mainLoop() also k
 
 # Using ‘pos()’, print onto the console your turtle’s last coordinates in the following format:“Current turtle position: , ”
 
-# ## Task 1: Square
-# Using the ‘turtle’ library, create a function that draws a square.
-
-# Use the function you have created to draw the pattern shown below:
-
-# ☐☐☐☐☐☐
-#   ☐☐☐☐
-#    ☐☐
 
 # 1. Import the ‘turtle’ library
 # 2. Set up the screen using ‘turtle.Screen()’
 # 3. Create a function, “draw_square” that will draw a 20x20 square
 # 4. Using ‘for’ loops and the “draw_square” function you have created, draw the pattern shown on the screen.
 # 5. You will have to reposition your turtle before calling the “draw_square” function each time.
-
-# ## Task 2: Square in a Square
-# Use a function with parameters to draw 7 squares inside each other, getting smaller and smaller.
-
-# 1. Import the ‘turtle’ library
-# 2. Create a 400x400 screen
-# 3. Create a function “draw_square” with a “size” parameter
-# 4. The “draw_square” function will draw a square of size*size around the (0,0) coordinate.
-# 5. Within a ‘for’ loop, use the “draw_square” function you have created to draw 7 squares around the (0,0) coordinate with the following sizes:50, 100, 150, 200, 250, 300, 350
-
-# ## Task 3: Shape Creator
-# You want to create a shape creator program that will draw any shape you want simply by giving the program the length and number of sides that the shape must have.
-
-# To do this, you need to create a function with 2 parameters:
-# - ‘length’
-# - ‘num_sides’
-
-# 1. Create a function called draw_shape() that takes in the length of the sides, as well as the number of sides.
-# 2. The function should draw a shape with the length of sides and number of sides given by calculating the exterior angle
-# 3. Using the  draw_shape() function, draw the following:
-# - Pentagon, Hexagon, Octagon and Decagon
-
-# ## Task 4: Drawing a House
-# You have been tasked to draw a house (made of a square and a triangle)
-
-# Using the ‘draw_shape’ function you have just created, create a house by first drawing a square, then a triangle above the square.
-# 1. The house is made up of a 100x100 square and a triangle that is 100 units long each side.
-# 2. The triangle must be connected to the square
-
-# You may refer to the following as a guide:
-# 1. Import ‘turtle’ library
-# 2. Set up a window
-# 3. Create a turtle object and lift the pen to move without drawing
-# 4. Define ‘draw_shape’ function to draw a regular polygon based on specified length and number of sides
-# 5. Define ‘draw_house’ function that uses the ‘draw_shape’ function to combine a square and a triangle
