@@ -163,10 +163,12 @@
 # Your turtle racing program is now complete!
 #  Import Libary
 import turtle 
+import random
 # Global Var
 screen = turtle.Screen() 
 t = turtle.Turtle() 
 # Setup
+# screen.setup(width=800,height=800)
 screen.bgcolor((1,1,0))
 # FUNCTIONS
 def draw_square():
@@ -177,13 +179,80 @@ def draw_square():
         t.forward(50) ## NOTE IT IS IN PIXELS
         t.right(90) ## Turns right(90 degrees)
 
+t.hideturtle()
+# How-to check width and height
+width = screen.window_width()
+height = screen.window_height()
+print(width, height)
 
 
 
 # Main Code
 t.penup() ## Puts pen up
-t.goto(-200,200)
+t.goto(-width/2+10,height/2 - 100)
 t.speed(0) ## Sets drawing speed
 t.seth(0) ## Set Init. Direction 
+t.shape("square")
+for i in range(int(-width/2+10),int(width/2),30):
+    t.setx(i)
+    t.stamp()
+t.goto(-width/2, -height /2+100)
+t.pencolor("green")
+t.pendown()
+t.goto(width/2,-height/2+100)
+
+
+# Make new turtle racer :D
+Sally = turtle.Turtle()
+Sally.hideturtle()
+Sally.shape("turtle")
+Sally.seth(90)
+Sally.pu()
+Sally.color("blue")
+Sally.goto(0,-height /2+85)
+Sally.write("Sally",align="center",font=("Arial",20))
+Sally.showturtle()
+Sally.pd()
+# Make new turtle racer :D
+Bob = turtle.Turtle()
+Bob.shape("classic")
+Bob.hideturtle()
+Bob.seth(90)
+Bob.pu()
+Bob.color("Red")
+Bob.goto(-width/4,-height/2+100)
+Bob.write("Bob",align="center",font=("Arial",20))
+Bob.showturtle()
+Bob.pd()
+# Make new turtle racer :D
+Keith = turtle.Turtle()
+Keith.shape("arrow")
+Keith.hideturtle()
+Keith.seth(90)
+Keith.pu()
+Keith.color("Green")
+Keith.goto(width/4,-height/2+90)
+Keith.write("Keith",align="center",font=("Arial",20))
+Keith.showturtle()
+Keith.pd()
+# GROUP TURTLES IN A LIST
+turtles = [Sally,Bob,Keith]
+end = False
+# da racing loop :D
+while True:
+    for i in turtles:
+        i.seth(random.randint(75,115))
+        i.forward(random.randint(1,20))
+    # Check if turtle reach finush line
+    if i.ycor() > int(height) /2 -100:
+        
+        print(f"Winner: {winner}")
+        
+
+        end = True
+        print("End")
+    if end == True:
+        break
+        
 
 turtle.done() ## keeps the window open, you can also do turtle.mainLoop() also known as its DONE
