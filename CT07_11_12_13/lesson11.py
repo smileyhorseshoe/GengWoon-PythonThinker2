@@ -246,7 +246,7 @@ while True:
     # Check if turtle reach finush line
     if i.ycor() > int(height) /2 -100:
         
-        print(f"Winner: {winner}")
+        print(f"Winner:")
         
 
         end = True
