@@ -1,213 +1,121 @@
-# Lesson 10 - Functions
+# Lesson 10 - Bouncing Ball
 
-## Recap 1: Creating a turtle window
-**Recap 1a**:
-By importing the 'turtle' library and using the following
-functions, create a blank window that stays:
-1. turtle.Screen()
-2. .mainloop()
+## Task 1: Even or Odd
+Create a function that takes in a number and returns whether it is even.
 
-**Recap 1b**:
-Modify your code to create a window that is 600 in width and
-400 in height
+1. Create a function named ‘is_even()’
+2. If the number is even, the function should return ‘True’
+3. If the number is odd, the function should return ‘False’
+4. Using the ‘is_even()’ function, loop through a list of numbers and print them out in this format:“3 is an odd number”“9 is an odd number”“2 is an even number”
 
-Hint:
-???.setup(width=???, height=???)
+## Task 2: Age Group
+Create a function that will take in someone’s age and return either of the following based on the age provided:
+- ‘Child’ (Below 13)
+- ‘Teen’ (14-20)
+- ‘Adult’ (21-64), or
+- ‘Senior’ (65 and above)
 
----------------------------------------------------------------
+Define the function ‘age_group()’ with one parameter: ‘age’.
+Use ‘if-elif-else’ statements to return the appropriate age group based on the ‘age’ parameter.
 
-## Recap 2: Basic Turtle Commands
-Using a selection of the following commands, create an orange
-turtle and move it in a square pattern in a forever loop:
-    1. turtle.Turtle()
-    2. .shape()
-    3. .fillcolor()
-    4. .seth()
-    5. .forward()
-    6. .backward()
-    7. .left()
-    8. .right()
+## Task 3: Quadruple the Number 
+Create a function that takes in a number and quadruples it.
 
-You may refer to the following steps as a guide:
-1. Import 'turtle' library
-2. Using 'turtle.Turtle()', assign variable 't' as the turtle
-   object.
-3. Using '.shape()', set the turtle shape to "turtle"
-4. Using '.fillcolor()', set the turtle colour to "orange"
-5. Using '.seth()', set the heading to 0 (right of screen)
-6. Within a forever loop:
-    a. Create a 'for' loop that repeats 4 times:
-        i. Using '.forward()', move the turtle object 100 steps
-           forward.
-        ii. Using '.left()', turn the turtle object 90 degrees
-            to the left.
+Create a function named quadruple_number() that takes in 1 parameter
+The function should take in a number, and return the quadrupled value of the number
+Using the quadruple_number() function, print the quadruples of the following numbers:
+- 105 (ans: 420)
+- 24 (ans: 96)
+- 402 (ans: 1608)
+- 594 (ans: 2376)
 
----------------------------------------------------------------
+## Task 4: Sum of squares - Function within a function
 
-## Recap 3: Drawing a pentagon
-Create a turtle object and draw a pentagon (5-sided polygon).
+### Task 4a
+Create a function ‘square()’ that will take in a number and return the squared value of the number. Squared is when the number is multiplied by itself.
 
-1. Import 'turtle' library
-2. Using 'turtle.Screen()', set up the turtle environment
-3. Using 'turtle.Turtle()', create a turtle object
-4. Using a 'for' loop, '.forward(100)', and '.right(72)', draw
-   a pentagon
-5. Use '.mainloop()' to keep the window open until it is closed
-   manually.
+For example, “5 squared” or 5² = 5x5 = 25
 
----------------------------------------------------------------
+Example:
+square(5) >>> 25
+Square(7) >>> 49
+square(3) >>> 9
 
-## Task 1: Function without parameter (w/o turtle)
-You are required to print the same "Motion Detected" phrase
-multiple times as part of a motion detecting program that you
-are creating.
+### Task 4b
+Create a function ‘sum_of_squares()’ that will take in 2 numbers and return the sum of each of the number squared.
 
-Create an 'alert()' function that will print "Motion Detected"
-whenever the function is called.
+You must use the  ‘square()’ function within the ‘sum_of_squares()’ function.
 
-**Example**
-Input:
-    alert()
-Output:
-    Motion Detected
+Example:
+sum_of_squares(3, 4) >>> 25
+sum_of_squares(2, 7) >>> 53
+sum_of_squares(9, 5) >>> 106
 
----------------------------------------------------------------
+## Task 5: Creating a turtle window
+By creating and using the following function, create a turtle window that is 300(w) x 500(h):
+- setup_screen(screenWidth, screenHeight)
 
-## Task 2: Function without parameter (w turtle)
-Using the 'turtle' library, create a 'square()' function that
-draws a 20x20 square at the turtle object's current position
-whenever the function is called.
+You will require the following:
+1. import turtle
+2. turtle.Screen()
+3. .setup(width=???, height=???)
+4. return
+5. ‘screenWidth’ variable
+6. ‘screenHeight’ variable
 
-By calling the 'square()' function, draw a square anywhere
-within the turtle window.
+## Task 6: Creating a turtle object
+By creating and using the following function, create a blue circular turtle object with its pen lifted: 
+- create_blue_ball()
 
----------------------------------------------------------------
+You will require the following:
+1. turtle.Turtle()
+2. .shape()
+3. .color()
+4. .penup()
+5. return
 
-## Task 3: Function with parameter (w/o turtle)
-Write a Python function 'multiply()', that takes 2 parameters,
-a and b, and prints the product of these 2 numbers.
+## Task 7: Moving turtle object
+By creating and using the following function, move the turtle object by ‘dx’ and ‘dy’ in a forever loop: 
+- move_ball(ball, dx, dy)
 
-**Example**
-Input:
-    multiply(3,5)
-Output:
-    15
+You will require the following:
+1. .setx()
+2. .xcor()
+3. .sety()
+4. .ycor()
+5. ‘dx’ variable
+6. ‘dy’ variable
 
----------------------------------------------------------------
+## Task 8a: Detecting edge (x-axis)
+By creating and using the following function, reverse the x-direction that the turtle object is moving when it touches the left/right side of the window: 
+- check_x(ball, screenWidth)
+- Returns ‘True’ if ball is beyond window in the x-axis
 
-## Task 4: Function with parameter (w turtle)
-Using the 'turtle' library, create a function 'drawSquare()',
-with 2 parameters, x and y, and draw a 20x20 square at the
-coordinate (x, y).
+You will require the following:
+1. .xcor()
+2. screenWidth/2
+3. or
+4. -screenWidth/2
+5. *= -1
 
-You may use the following steps as a guide:
-1. Import 'turtle' library
-2. Create a turtle object using 'turtle.Turtle()'
-3. Define a function 'drawSqare()' with 2 parameters, x and y
-        a. Lift the pen using '.penup()'
-        b. Reposition the turtle object using '.goto(x, y)'
-        c. Put the pen down using '.pendown()'
-        d. Create a 'for' loop to draw a square
-4. Test out your program using 'drawSquare(-50, 50)'
-5. Use '.mainloop()' to keep the window open
+## Task 8b: Detecting edge (y-axis)
+By creating and using the following function, reverse the y-direction that the turtle object is moving when it touches the top/bottom side of the window: 
+- check_y(ball, screenHeight)
+- Returns ‘True’ if ball is beyond window in the y-axis
 
----------------------------------------------------------------
+You will require the following:
+1. .ycor()
+2. screenHeight/2
+3. or
+4. -screenHeight/2
+5. *= -1
 
-## Task 5: Function with return value (w/o turtle)
-Define an 'isElderly()' function with 1 parameter, age,
-and return True if the age is larger than, or equal to 65.
-
-Using the 'isElderly()' function created, create a program
-that asks the user for their age. Then use an 'if' statement
-to print "You are eligible for an elderly discount" if
-'isElderly()' returns True.
-
----------------------------------------------------------------
-
-## Task 6: Function with return value (w turtle)
-Using 'xcor()' and 'ycor()', create a function 'turtleCoord()'
-that takes in a parameter, turtle_obj, and returns the current
-x and y coordinates of the turtle object.
-
-Then, using the 'turtleCoord()' function, modify your answer
-from Task 4 to print out the coordinates of the turtle object
-after drawing a square.
-
----------------------------------------------------------------
-
-## Task 7: Whatsapp link generator
-Imagine you have a website and you want to include a button or
-link that allows people to easily chat with you on Whatsapp.
-
-Can you write a function called whatsappMe() that takes
-someone's phone number (without any dashes or spaces) and
-creates a link that opens a chat with them on Whatsapp?
-
-For example, if given '98765432' as the argument, the function
-should print: 'Whatsapp me at https://wa.me/6598765432'
-
-**Bonus Challenge**
-1. Write some code that creates a list of 100 random 8-digit
-   phone numbers that starts with either '8' or '9'. Then using
-   the whatsappMe() function, print a list of WhatsApp links
-   for each of the numbers.
-2. Modify your code so that each of the 100 random 8-digit
-   phone numbers generated is unique.
-
----------------------------------------------------------------
-
-## Task 8: Random Generator
-Imagine you have a magic hat that can only hold numbers between
-1 and 100. This function, called "randgen", acts like shaking
-that hat.
-
-You tell "randgen" how many numbers to shake out of the hat
-(let's call this number "shakes").
-
-"randgen" will then shake out that many numbers and put them
-in a bag.
-
-Once it's done, "randgen" will tell you:
-1. How many numbers it shook out (the "shakes" number).
-2. The biggest number it shook out.
-3. The smallest number it shook out.
-4. The average of all the numbers it shook out
-
-**Bonus Challenge**
-1. Create a program that will shake the hat from 5 to 50 times
-   at 5 shake intervals.
-
----------------------------------------------------------------
-
-## Task 9: Rock Paper Scissors
-How can we write Python code to play Rock, paper, scissors
-against the computer?
-
-We need 2 functions:
-1. A 'generate_computer_move' function to generate a random
-   choice of "rock", "paper", or "scissors" for the computer.
-2. A 'determine_winner' function to determine the winner based
-   on the player's choice and the computer's random choice.
-
-After creating the 2 functions, the main part of the code runs
-in a loop:
-1. Prompt the user for their move ("rock", "paper", or
-   "scissors").
-2. Validate the user's input.
-3. Generate the computer's move using the
-   'generate_computer_move' function.
-4. Print both the player's and computer's moves.
-5. Determine the winner using the 'determine_winner' function
-   and print the result.
-6. Ask the user if they want to play again.
-7. The loop continues until the user chooses not to play again
-
-**Bonus Challenge**
-1. Keep track of the score for both you and the computer and
-   display the current score after each round.
-2. Add an option at the start of the program to allow for
-   single or 2-player mode. In 2-player mode, allow 2 players
-   to take turns choosing their moves and determine the winner
-   between them.
-3. When the game ends, pick a random forfeit from a list that
-   the loser have to do.
+## Challenge: Features to implement
+1. Have a line trail that the turtle object leave behind as it bounces around
+2. Change the following each time the turtle object bounces:
+- Colour of the turtle object
+- Speed of the turtle object (faster/slower)
+- Shape of the turtle object
+3. Use a variable to count the number of times the ball has bounced
+4. Exit the loop when the ball bounces 50 times.
+5. Use the time library to keep the program running for ‘x’ seconds determined by the user
